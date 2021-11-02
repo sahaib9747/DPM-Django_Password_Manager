@@ -87,9 +87,9 @@ footer{
 }
 
 
-/*#########   modals #######"*/
+/*#########   models #######"*/
 
-.modals-wrapper{
+.models-wrapper{
     width: 100%;
     height: 100%;
     background-color: var(--global-text-color);
@@ -99,14 +99,14 @@ footer{
     position: fixed;
 }
 
-.modal{
+.model{
     background-color: var(--global-background-color);
     min-width: 400px;
     min-height: 400px;
     padding: 20px;
 }
 
-#close-modal{
+#close-model{
     background-color: var(--link-background-collor);
     position: absolute;
     top: 5%;
@@ -115,14 +115,14 @@ footer{
     padding: 5px;
 }
 
-#login-modal, #signup-modal{
+#login-model, #signup-model{
     display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-#password-modal, #add-password-modal{
+#password-model, #add-password-model{
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -193,13 +193,13 @@ footer{
     padding: 5px;
 }
 
-/*Change the size of the modal in the small devices*/
+/*Change the size of the model in the small devices*/
 @media screen and (max-width: 680px) {
-    .modal{
+    .model{
         min-height: 300px;
     }
 
-    .modals-wrapper{
+    .models-wrapper{
         max-height: 740px;
     }
 }

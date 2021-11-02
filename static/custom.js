@@ -1,21 +1,21 @@
-//display  modal on click
+//display  model on click
  
-const modalWrapper = document.querySelector(".modals-wrapper");
-if (modalWrapper){
-    function displayModal(id){
-        const modal = document.getElementById(id);
-        modalWrapper.style.display = "flex";
-        modal.style.display = "flex";
-        //close modal
-        const close = document.getElementById("close-modal");
+const modelWrapper = document.querySelector(".models-wrapper");
+if (modelWrapper){
+    function displaymodel(id){
+        const model = document.getElementById(id);
+        modelWrapper.style.display = "flex";
+        model.style.display = "flex";
+        //close model
+        const close = document.getElementById("close-model");
         close.addEventListener("click", () =>{
-            modalWrapper.style.display = "none";
-            modal.style.display = "none";
-        //I added this later, didn't cover it on the tutorial
+            modelWrapper.style.display = "none";
+            model.style.display = "none";
+        //I added this later
         document.querySelector("header").style.display = "unset";
         })
 
-        //I added this later, didn't cover it on the tutorial
+        //I added this later
         document.querySelector("header").style.display = "none";
     }
 }
@@ -31,7 +31,7 @@ copies.forEach(copy =>{
     }
 })
 
-//I added this later, didn't cover it on the tutorial
+
 //Display the actions of the password card for mobile devices
 const actions = document.querySelectorAll(".actions");
 if (actions){

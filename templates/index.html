@@ -1,4 +1,4 @@
-{%load staic%}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +8,39 @@
     <title>Django Password Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'main.js %}" defer></script>
+    <script src="{% static 'custom.js' %}" defer></script>
 </head>
 <body>
 
-    <header>
+    <header> 
         <nav>
             <div class="brand"><a href=""><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Password Manager</a></div>
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="javascript:;" onclick="displayModal('login-modal');">Login</a></li>
-                <li><a href="javascript:;" onclick="displayModal('signup-modal');">SignUp</a></li>
-                <li><a href="javascript:;" onclick="displayModal('password-modal');">View</a></li>
-                <li><a href="javascript:;" onclick="displayModal('add-password-modal');">Add</a></li>
+                <li><a href="javascript:;" onclick="displaymodel('login-model');">Login</a></li>
+                <li><a href="javascript:;" onclick="displaymodel('signup-model');">SignUp</a></li>
+                <li><a href="javascript:;" onclick="displaymodel('password-model');">View</a></li>
+                <li><a href="javascript:;" onclick="displaymodel('add-password-model');">Add</a></li>
             </ul>
         </nav>
     </header>
 
-    <!--Modals-->
-    <div class="modals-wrapper">
-        <span id="close-modal" title="close"><i class="fa fa-times" aria-hidden="true"></i></span>
-        <!--login modal-->
-        <div class="modal" id="login-modal">
-            <form action="">
+    <!--models-->
+    <div class="models-wrapper">
+        <span id="close-model" title="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <!--login model-->
+        <div class="model" id="login-model">
+            <form action="/" method="post">
+                {% csrf_token %}
                 <h2>Login</h2>
                 <input type="text" name="username" placeholder="username">
                 <input type="password" name="password" placeholder="password">
-                <input type="submit" value="login">
+                <input type="submit" name="login-form" value="login">
             </form>
         </div>
 
-        <!--signup modal-->
-        <div class="modal" id="signup-modal">
+        <!--signup model-->
+        <div class="model" id="signup-model">
             <form action="">
                 <h2>SignUp</h2>
                 <input type="text" name="username" placeholder="username">
@@ -47,20 +48,20 @@
                 
                 <input type="password" name="password" placeholder="password">
                 <input type="password2" name="password2" placeholder="confirm password">
-                <input type="submit" value="register">
+                <input type="submit" name="signup-form" value="register">
             </form>
         </div>
 
-        <!-- password modal-->
-        <div class="modal" id="password-modal">
+        <!-- password model-->
+        <div class="model" id="password-model">
                 <h2>URL or Name</h2>
                 <img width="80" height="80" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_1280.png" alt="">
                 <input type="email" name="email" value="email"><i class="fas fa-copy copy" title="copy to clipboard"></i>
                 <input type="password" name="username" value="password"><i class="fas fa-copy copy" title="copy to clipboard"></i>
         </div>
 
-        <!--add password modal-->
-        <div class="modal" id="add-password-modal">
+        <!--add password model-->
+        <div class="model" id="add-password-model">
             <form action="">
                 <h2>Add new password</h2>
                 <input type="text" name="url" placeholder="url of website">
@@ -73,7 +74,15 @@
     </div>
 
     <div class="container">
-
+        <div class="security-check">
+            <h3>we sent a mail!</h3>
+            <form method="post">
+                {% csrf_token %}
+                <label for="security-code">Enter the code: </label>
+                <input type="number" name="security-code" id='security-code'>
+                <input type="submit" name="code-submit-form" id="code-submit">
+            </form>
+        </div>
         <!--One card-->
         <div class="card">
             <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>

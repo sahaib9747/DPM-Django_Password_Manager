@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DPM',
         'USER': 'admin',
-        'PASSWORD': 'rihan@KHAN01854487',
+        'PASSWORD': 'my@DB1234',
         'HOST': '127.0.0.1',
         'PORT': 3306
     }
@@ -130,3 +130,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# required to send email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "dpm.mailclient@gmail.com"
+EMAIL_HOST_PASSWORD = "rihan@KHAN01854487"
+EMAIL_USE_TLS = True
+
+
+print('This is settings root')
